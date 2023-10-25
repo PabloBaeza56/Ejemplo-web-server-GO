@@ -1,0 +1,49 @@
+{{ define "Cursos_Plantilla_Generica"}}
+
+{{template "cabecera"}}
+
+
+
+<center>
+    <div class="container-md">
+        <div class="card w-75">
+            <div class="card-header">
+                <h2>{{.Personal_Info_Cursos.Name}}</h2>
+            </div>
+            <div class="card-body">
+                <blockquote class="blockquote">
+                    <h5>{{.Personal_Info_Cursos.Description}}</h5>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</center>
+<br><br>
+
+
+<div class="container-md">
+
+
+    <div class="row row-cols-1 row-cols-sm-4 g-4">
+        {{range .Personal_Lista_Cursos}}
+
+
+
+        <div class="card">
+            <img src={{.Link_Imagen}} class="card-img-top" alt="..." width="250" height="250">
+            <div class="card-body">
+                <h2 class="card-title">{{.Nombre}}</h2>
+                <p class="card-text">{{.Description}}</p>
+                <a href="{{.Link_URL}}" class="btn btn-dark" role="button">Acceder</a>
+            </div>
+        </div>
+
+        {{end}}
+    </div>
+
+</div>
+<br>
+<br>
+
+{{template "footer"}}
+{{end}}
